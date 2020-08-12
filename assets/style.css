@@ -55,3 +55,7 @@ nav {
 .hide {
     display: none;
 }
+
+.show {
+    display: flex;
+}
