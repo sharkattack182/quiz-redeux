@@ -53,6 +53,10 @@ function generateQuestions() {
 
 
     questionEl.textContent = questions[0].q;
+   answer1.textContent = questions[0].c[0];
+   answer2.textContent = questions[0].c[1];
+   answer3.textContent = questions[0].c[2];
+   answer4.textContent = questions[0].c[3]; // this line is returning null
 }
 //check answers function
     //if the answer is correct run nextQuestion
