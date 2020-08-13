@@ -55,17 +55,14 @@ var questions = [
 ]
 
 function generateQuestions() {
-
-for (let i = 0; i <questions.length; i++) {
-    
-    questionEl.textContent = questions[i].q;
-   answer1.textContent = questions[i].c[0];
-   answer2.textContent = questions[i].c[1];
-   answer3.textContent = questions[i].c[2];
-   answer4.textContent = questions[i].c[3];
+   question = 0;   // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
+    questionEl.textContent = questions[question].q;
+   answer1.textContent = questions[question].c[0];
+   answer2.textContent = questions[question].c[1];
+   answer3.textContent = questions[question].c[2];
+   answer4.textContent = questions[question].c[3];
  }
- if(document.querySelector(".btn").addEventListener("click", nextQuestion()));
-}
+
 
 function nextQuestion() {
     //question++;  for some reason its instantly going to question 2 during on start
