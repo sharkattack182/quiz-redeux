@@ -8,7 +8,7 @@ var answer2 = document.getElementById("btn2");
 var answer3 = document.getElementById("btn3");
 var answer4 = document.getElementById("btn4");
 
-
+var question = 0;
 var secondsLeft = 45;
 
 function runGame() {
@@ -45,20 +45,30 @@ var questions = [
         q: "how much wood could a wood chuck chuck?",
         c: ["1", "2", "3", "4"],
         aindex: 2,
+    },
+
+    {
+        q: "how any licks does it take to get to the center of a tootsie pop?",
+        c: ["1", "2", "3", "4"],
+        aindex: 2, 
     }
 ]
 
 function generateQuestions() {
-    question = 0
 
 for (let i = 0; i <questions.length; i++) {
     
-    questionEl.textContent = questions[1].q;
+    questionEl.textContent = questions[i].q;
    answer1.textContent = questions[i].c[0];
    answer2.textContent = questions[i].c[1];
    answer3.textContent = questions[i].c[2];
    answer4.textContent = questions[i].c[3];
  }
+ if(document.querySelector(".btn").addEventListener("click", nextQuestion()));
+}
+
+function nextQuestion() {
+    //question++;  for some reason its instantly going to question 2 during on start
 }
 //check answers function
     //if the answer is correct run nextQuestion
