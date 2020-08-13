@@ -3,6 +3,12 @@ var questionsDiv = document.querySelector(".hide");
 var homepageEl = document.getElementById("homepage");
 var timerEl = document.getElementById("timer");
 var questionEl = document.getElementById("question");
+var answer1 = document.getElementById("btn1");
+var answer2 = document.getElementById("btn2");
+var answer3 = document.getElementById("btn3");
+var answer4 = document.getElementById("bt4");
+
+
 var secondsLeft = 45;
 
 function runGame() {
@@ -15,7 +21,7 @@ function runGame() {
     //runTimer()
     //generateQuestions()
     console.log(questions);
-
+    generateQuestions();
 }
 
 //runtimer function
@@ -41,6 +47,13 @@ var questions = [
         aindex: 2,
     }
 ]
+
+function generateQuestions() {
+    question = 0
+
+
+    questionEl.textContent = questions[0].q;
+}
 //check answers function
     //if the answer is correct run nextQuestion
     //if its incorrect -5 sec then run nextQuestion
