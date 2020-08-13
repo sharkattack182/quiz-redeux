@@ -6,7 +6,7 @@ var questionEl = document.getElementById("question");
 var answer1 = document.getElementById("btn1");
 var answer2 = document.getElementById("btn2");
 var answer3 = document.getElementById("btn3");
-var answer4 = document.getElementById("bt4");
+var answer4 = document.getElementById("btn4");
 
 
 var secondsLeft = 45;
@@ -51,12 +51,14 @@ var questions = [
 function generateQuestions() {
     question = 0
 
-
-    questionEl.textContent = questions[0].q;
-   answer1.textContent = questions[0].c[0];
-   answer2.textContent = questions[0].c[1];
-   answer3.textContent = questions[0].c[2];
-   answer4.textContent = questions[0].c[3]; // this line is returning null
+for (let i = 0; i <questions.length; i++) {
+    
+    questionEl.textContent = questions[1].q;
+   answer1.textContent = questions[i].c[0];
+   answer2.textContent = questions[i].c[1];
+   answer3.textContent = questions[i].c[2];
+   answer4.textContent = questions[i].c[3];
+ }
 }
 //check answers function
     //if the answer is correct run nextQuestion
