@@ -9,8 +9,23 @@ var answer3 = document.getElementById("btn3");
 var answer4 = document.getElementById("btn4");
 var buttonsEl = document.getElementsByClassName(".btn");
 
+var nameElhs = document.getElementsByClassName("name");
+var scoreElhs =document.getElementsByClassName("score");
+
 var question = 0;
 var secondsLeft = 45;
+
+function endGame() {
+    window.location.href = "assets/highscores.html" 
+    var name = prompt("please enter name.")
+    localStorage.setItem("score", JSON.stringify(secondsLeft));
+    localStorage.setItem("name", JSON.stringify(name));
+
+    scoreElhs.textContent(JSON.parse(localStorage.getItem("score")));
+    nameElhs.textContent(localStorage.getItem("name"));
+
+}
+
 
 function runGame() {
     //start a timer
@@ -97,7 +112,7 @@ function generateQuestion1() {
         console.log(secondsLeft) ;   
     }
         
-}, false);
+}, true);
     
  }
 
@@ -123,7 +138,7 @@ function generateQuestion1() {
             secondsLeft-= 5;        
         }
             
-    }, false);
+    }, true);
   }
 
   function generateQuestion3() {
@@ -148,7 +163,7 @@ function generateQuestion1() {
             secondsLeft-= 5;         
         }
             
-    }, false);
+    }, true);
    }
 
    function generateQuestion4() {
@@ -171,14 +186,5 @@ function generateQuestion1() {
             secondsLeft-= 5;        
         }
             
-    }, false);
-   }
-
-
-//end game function
-    //taks you to highscores page
-    //aska for name and logs high score to local storage
-function endGame() {
-    window.location.href = "assets/highscores.html" 
+    }, true);
 }
-
