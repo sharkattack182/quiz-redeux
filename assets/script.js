@@ -34,7 +34,8 @@ function runTimer() {
         secondsLeft--;
         timerEl.textContent = secondsLeft;
         if (secondsLeft == 0) {
-            clearInterval(timer)
+            clearInterval(timer);
+            endGame();
         }
     }, 1000);
 }
@@ -91,10 +92,9 @@ function generateQuestion1() {
         console.log("true")
         generateQuestion2();
     }
-    else {
-        console.log(event.target.id)
-        console.log(questions[0].answer)
-        secondsLeft-= 5;        
+    else if (event.target.id != questions[0].answer){
+        secondsLeft-= 5; 
+        console.log(secondsLeft) ;   
     }
         
 }, false);
@@ -119,9 +119,7 @@ function generateQuestion1() {
             console.log("true")
             generateQuestion3();
         }
-        else {
-            console.log(event.target.id)
-            console.log(questions[1].answer)
+        else if (event.target.id != questions[1].answer){
             secondsLeft-= 5;        
         }
             
@@ -146,10 +144,8 @@ function generateQuestion1() {
             console.log("true")
             generateQuestion4();
         }
-        else {
-            console.log(event.target.id)
-            console.log(questions[2].answer)
-            secondsLeft-= 5;        
+        else if (event.target.id != questions[2].answer){
+            secondsLeft-= 5;         
         }
             
     }, false);
@@ -165,57 +161,24 @@ function generateQuestion1() {
 
      document.addEventListener('click', function (event) {
 
-        // If the clicked element doesn't have the right selector, bail
         if (!event.target.matches(".btn")) {
             return;
         } 
-        if (event.target.id == questions[3].answer) {
-            console.log("true")
-            generateQuestion5();
+        if (event.target.id == questions[4].answer) {
+            endGame();
         }
-        else {
-            console.log(event.target.id)
-            console.log(questions[3].answer)
+        else if (event.target.id != questions[4].answer){
             secondsLeft-= 5;        
         }
             
     }, false);
    }
-
-   function generateQuestion5() {
-    // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
-      questionEl.textContent = questions[4].q;
-     answer1.textContent = questions[4].c[0];
-     answer2.textContent = questions[4].c[1];
-     answer3.textContent = questions[4].c[2];
-     answer4.textContent = questions[4].c[3];
-   }
-
-
-
-//check answers function
-    //if the answer is correct run nextQuestion
-    //if its incorrect -5 sec then run nextQuestion
-    document.addEventListener('click', function (event) {
-
-        // If the clicked element doesn't have the right selector, bail
-        if (!event.target.matches(".btn")) {
-            return;
-        } 
-        if (event.target.id == questions[0].answer) {
-            console.log("true")
-            generateQuestion2();
-        }
-        else {
-            console.log(event.target.id)
-            console.log(questions[0].answer)
-            secondsLeft-= 5;        
-        }
-            
-    }, false);
-
 
 
 //end game function
     //taks you to highscores page
     //aska for name and logs high score to local storage
+function endGame() {
+    window.location.href = "assets/highscores.html" 
+}
+
