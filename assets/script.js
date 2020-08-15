@@ -52,7 +52,25 @@ var questions = [
         q: "how any licks does it take to get to the center of a tootsie pop?",
         c: ["1", "2", "3", "4"],
         answer: "btn3", 
-    }
+    }, 
+
+    {
+        q: "do you like candles?",
+        c: ["1", "2", "3", "4"],
+        answer: "btn2",
+    },
+
+    {
+        q: "wahts purple?",
+        c: ["1", "2", "3", "4"],
+        answer: "btn4",
+    },
+
+    {
+        q: "yellow",
+        c: ["1", "2", "3", "4"],
+        answer: "btn1",
+    },
 ]
 
 function generateQuestion1() {
@@ -62,6 +80,24 @@ function generateQuestion1() {
    answer2.textContent = questions[0].c[1];
    answer3.textContent = questions[0].c[2];
    answer4.textContent = questions[0].c[3];
+
+   document.addEventListener('click', function (event) {
+
+    // If the clicked element doesn't have the right selector, bail
+    if (!event.target.matches(".btn")) {
+        return;
+    } 
+    if (event.target.id == questions[0].answer) {
+        console.log("true")
+        generateQuestion2();
+    }
+    else {
+        console.log(event.target.id)
+        console.log(questions[0].answer)
+        secondsLeft-= 5;        
+    }
+        
+}, false);
     
  }
 
@@ -72,7 +108,89 @@ function generateQuestion1() {
     answer2.textContent = questions[1].c[1];
     answer3.textContent = questions[1].c[2];
     answer4.textContent = questions[1].c[3];
+
+    document.addEventListener('click', function (event) {
+
+        // If the clicked element doesn't have the right selector, bail
+        if (!event.target.matches(".btn")) {
+            return;
+        } 
+        if (event.target.id == questions[1].answer) {
+            console.log("true")
+            generateQuestion3();
+        }
+        else {
+            console.log(event.target.id)
+            console.log(questions[1].answer)
+            secondsLeft-= 5;        
+        }
+            
+    }, false);
   }
+
+  function generateQuestion3() {
+    // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
+      questionEl.textContent = questions[2].q;
+     answer1.textContent = questions[2].c[0];
+     answer2.textContent = questions[2].c[1];
+     answer3.textContent = questions[2].c[2];
+     answer4.textContent = questions[2].c[3];
+
+     document.addEventListener('click', function (event) {
+
+        // If the clicked element doesn't have the right selector, bail
+        if (!event.target.matches(".btn")) {
+            return;
+        } 
+        if (event.target.id == questions[2].answer) {
+            console.log("true")
+            generateQuestion4();
+        }
+        else {
+            console.log(event.target.id)
+            console.log(questions[2].answer)
+            secondsLeft-= 5;        
+        }
+            
+    }, false);
+   }
+
+   function generateQuestion4() {
+    // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
+      questionEl.textContent = questions[3].q;
+     answer1.textContent = questions[3].c[0];
+     answer2.textContent = questions[3].c[1];
+     answer3.textContent = questions[3].c[2];
+     answer4.textContent = questions[3].c[3];
+
+     document.addEventListener('click', function (event) {
+
+        // If the clicked element doesn't have the right selector, bail
+        if (!event.target.matches(".btn")) {
+            return;
+        } 
+        if (event.target.id == questions[3].answer) {
+            console.log("true")
+            generateQuestion5();
+        }
+        else {
+            console.log(event.target.id)
+            console.log(questions[3].answer)
+            secondsLeft-= 5;        
+        }
+            
+    }, false);
+   }
+
+   function generateQuestion5() {
+    // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
+      questionEl.textContent = questions[4].q;
+     answer1.textContent = questions[4].c[0];
+     answer2.textContent = questions[4].c[1];
+     answer3.textContent = questions[4].c[2];
+     answer4.textContent = questions[4].c[3];
+   }
+
 
 
 //check answers function
@@ -86,11 +204,7 @@ function generateQuestion1() {
         } 
         if (event.target.id == questions[0].answer) {
             console.log("true")
-            questionEl.textContent = questions[1].q;
-            answer1.textContent = questions[1].c[0];
-            answer2.textContent = questions[1].c[1];
-            answer3.textContent = questions[1].c[2];
-            answer4.textContent = questions[1].c[3];
+            generateQuestion2();
         }
         else {
             console.log(event.target.id)
@@ -100,8 +214,7 @@ function generateQuestion1() {
             
     }, false);
 
-//nextquestion function 
-    //questionindex ++
+
 
 //end game function
     //taks you to highscores page
