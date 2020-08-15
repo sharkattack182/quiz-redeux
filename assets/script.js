@@ -7,6 +7,7 @@ var answer1 = document.getElementById("btn1");
 var answer2 = document.getElementById("btn2");
 var answer3 = document.getElementById("btn3");
 var answer4 = document.getElementById("btn4");
+var buttonsEl = document.getElementsByClassName(".btn");
 
 var question = 0;
 var secondsLeft = 45;
@@ -21,7 +22,7 @@ function runGame() {
     //runTimer()
     //generateQuestions()
     console.log(questions);
-    generateQuestions();
+    generateQuestion1();
 }
 
 //runtimer function
@@ -44,32 +45,60 @@ var questions = [
     {
         q: "how much wood could a wood chuck chuck?",
         c: ["1", "2", "3", "4"],
-        aindex: 2,
+        answer: "btn1", //asign this to a value number and match with the buttons value clicked
     },
 
     {
         q: "how any licks does it take to get to the center of a tootsie pop?",
         c: ["1", "2", "3", "4"],
-        aindex: 2, 
+        answer: "btn3", 
     }
 ]
 
-function generateQuestions() {
+function generateQuestion1() {
    question = 0;   // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
-    questionEl.textContent = questions[question].q;
-   answer1.textContent = questions[question].c[0];
-   answer2.textContent = questions[question].c[1];
-   answer3.textContent = questions[question].c[2];
-   answer4.textContent = questions[question].c[3];
+    questionEl.textContent = questions[0].q;
+   answer1.textContent = questions[0].c[0];
+   answer2.textContent = questions[0].c[1];
+   answer3.textContent = questions[0].c[2];
+   answer4.textContent = questions[0].c[3];
+    
  }
 
+ function generateQuestion2() {
+   // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
+     questionEl.textContent = questions[1].q;
+    answer1.textContent = questions[1].c[0];
+    answer2.textContent = questions[1].c[1];
+    answer3.textContent = questions[1].c[2];
+    answer4.textContent = questions[1].c[3];
+  }
 
-function nextQuestion() {
-    //question++;  for some reason its instantly going to question 2 during on start
-}
+
 //check answers function
     //if the answer is correct run nextQuestion
     //if its incorrect -5 sec then run nextQuestion
+    document.addEventListener('click', function (event) {
+
+        // If the clicked element doesn't have the right selector, bail
+        if (!event.target.matches(".btn")) {
+            return;
+        } 
+        if (event.target.id == questions[0].answer) {
+            console.log("true")
+            questionEl.textContent = questions[1].q;
+            answer1.textContent = questions[1].c[0];
+            answer2.textContent = questions[1].c[1];
+            answer3.textContent = questions[1].c[2];
+            answer4.textContent = questions[1].c[3];
+        }
+        else {
+            console.log(event.target.id)
+            console.log(questions[0].answer)
+            secondsLeft-= 5;        
+        }
+            
+    }, false);
 
 //nextquestion function 
     //questionindex ++
