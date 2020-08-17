@@ -6,4 +6,4 @@ The main two problems I ran into were A. with the local storage I was having tro
 
 a link to the live code can be found here: 
 
-a link to the gitHub page can be found here: 
+a link to the gitHub page can be found here: https://github.com/sharkattack182/quiz-redeux
