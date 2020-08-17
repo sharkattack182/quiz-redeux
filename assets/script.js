@@ -26,6 +26,11 @@ function endGame() {
     clearInterval(timer);
 }
 
+//check answer function
+
+//function checkAnswer() {
+   // if
+//}
 
 function runGame() {
     //start a timer
@@ -85,7 +90,7 @@ var questions = [
 ]
 
 function generateQuestion1() {
-   question = 0;   // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
+   qu = 0;   // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
     questionEl.textContent = questions[0].q;
    answer1.textContent = questions[0].c[0];
    answer2.textContent = questions[0].c[1];
@@ -98,16 +103,18 @@ function generateQuestion1() {
     if (!event.target.matches(".btn")) {
         return;
     } 
-    if (event.target.id == questions[0].answer) {
+    if (event.target.id == questions[qu].answer) {
         console.log("true")
         generateQuestion2();
+    } else if (event.target.id != questions[qu].answer) {
+        secondsLeft -=5;
     }
 }, true);
     
  }
 
  function generateQuestion2() {
-   // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
+    qu = 1;
      questionEl.textContent = questions[1].q;
     answer1.textContent = questions[1].c[0];
     answer2.textContent = questions[1].c[1];
@@ -129,7 +136,7 @@ function generateQuestion1() {
   }
 
   function generateQuestion3() {
-    // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
+    q = 2;
       questionEl.textContent = questions[2].q;
      answer1.textContent = questions[2].c[0];
      answer2.textContent = questions[2].c[1];
@@ -151,7 +158,7 @@ function generateQuestion1() {
    }
 
    function generateQuestion4() {
-    // my idea is to set question to zero then once an answer is selected got question++ making the index 1 and so on
+    q = 3;
       questionEl.textContent = questions[3].q;
      answer1.textContent = questions[3].c[0];
      answer2.textContent = questions[3].c[1];
@@ -169,3 +176,5 @@ function generateQuestion1() {
          
     }, true);
 }
+
+
