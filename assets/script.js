@@ -21,8 +21,8 @@ function endGame() {
     localStorage.setItem("score", JSON.stringify(secondsLeft));
     localStorage.setItem("name", JSON.stringify(name));
 
-    scoreElhs.textContent(JSON.parse(localStorage.getItem("score")));
-    nameElhs.textContent(localStorage.getItem("name"));
+    scoreElhs.textContent(JSON.parse(localStorage.getItem(score)));
+    nameElhs.textContent(localStorage.getItem(name));
     clearInterval(timer);
 }
 
@@ -59,34 +59,29 @@ function runTimer() {
         //include question, choices(array), and answer value(index)
 var questions = [
     {
-        q: "how much wood could a wood chuck chuck?",
-        c: ["1", "2", "3", "4"],
+        q: "Where does Hermione brew her first batch of Polyjuice Potion?",
+        c: ["Moaning Myrtle’s Bathroom", "The Hogwarts Kitchen", "The Room of Requirement", "The Gryffindor Common Room"],
         answer: "btn1", //asign this to a value number and match with the buttons value clicked
     },
 
     {
-        q: "how any licks does it take to get to the center of a tootsie pop?",
-        c: ["1", "2", "3", "4"],
-        answer: "btn3", 
+        q: "What does one say to close the Marauder’s Map and make it blank again?",
+        c: ["All Done", "Hello Professor", "Nothing to See Here", "Mischief Managed"],
+        answer: "btn4", 
     }, 
 
     {
-        q: "do you like candles?",
-        c: ["1", "2", "3", "4"],
-        answer: "btn2",
+        q: "Who has been stealing Harry’s letters from Ron and Hermione at the beginning of ‘Harry Potter and the Chamber of Secrets’?",
+        c: ["Dumbledore", "Draco Malfoy", "Dobby", "The Dursleys"],
+        answer: "btn3",
     },
 
     {
-        q: "wahts purple?",
-        c: ["1", "2", "3", "4"],
-        answer: "btn4",
-    },
-
-    {
-        q: "yellow",
-        c: ["1", "2", "3", "4"],
+        q: "From what King’s Cross platform does the Hogwarts Express leave?",
+        c: ["Nine and Three-quarters", "Eight and One-quarter", "Five and a Half", "Eleven"],
         answer: "btn1",
     },
+
 ]
 
 function generateQuestion1() {
@@ -168,7 +163,7 @@ function generateQuestion1() {
         if (!event.target.matches(".btn")) {
             return;
         } 
-        if (event.target.id == questions[4].answer) {
+        if (event.target.id == questions[3].answer) {
             endGame();
         }     
          
