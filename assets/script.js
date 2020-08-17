@@ -9,8 +9,8 @@ var answer3 = document.getElementById("btn3");
 var answer4 = document.getElementById("btn4");
 var buttonsEl = document.getElementsByClassName(".btn");
 
-var nameElhs = document.getElementsByClassName("name");
-var scoreElhs =document.getElementsByClassName("score");
+var nameElhs = document.getElementById("name");
+var scoreElhs = document.getElementById("score");
 
 var question = 0;
 var secondsLeft = 45;
@@ -19,9 +19,9 @@ function endGame() {
     window.location.href = "assets/highscores.html" 
     var name = prompt("please enter name.")
     localStorage.setItem("score", JSON.stringify(secondsLeft));
-    localStorage.setItem("name", JSON.stringify(name));
+    localStorage.setItem("name", name);
 
-    scoreElhs.textContent(JSON.parse(localStorage.getItem(score)) || []);
+    scoreElhs.textContent(JSON.parse(localStorage.getItem(score)));
     nameElhs.textContent(localStorage.getItem(name));
     clearInterval(timer);
 }

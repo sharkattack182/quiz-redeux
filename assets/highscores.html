@@ -22,28 +22,11 @@
       <h3>Highscores</h3>
     </div>
     <div class="scorebox"><strong>scores</strong></div>
-    <div class="name">A</div>
-    <div class="score">B</div>
+    <div id ="name">A</div>
+    <div id ="score">B</div>
   </div>
 
-  <script src="script.js"></script>
-  <script>
 
-    function onload() {
-
-      var nameElhs = document.getElementsByClassName("name");
-      var scoreElhs = document.getElementsByClassName("score");
-
-      localStorage.setItem("score", JSON.stringify(secondsLeft));
-      localStorage.setItem("name", JSON.stringify(name));
-
-      scoreElhs.textContent(JSON.parse(localStorage.getItem("score")));
-      nameElhs.textContent(localStorage.getItem("name"));
-    }
-
-
-
-  </script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
@@ -53,6 +36,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
 </body>
 
 </html>
