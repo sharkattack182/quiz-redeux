@@ -23,7 +23,7 @@ function endGame() {
 
     scoreElhs.textContent(JSON.parse(localStorage.getItem("score")));
     nameElhs.textContent(localStorage.getItem("name"));
-
+    clearInterval(timer);
 }
 
 
@@ -107,11 +107,6 @@ function generateQuestion1() {
         console.log("true")
         generateQuestion2();
     }
-    else if (event.target.id != questions[0].answer){
-        secondsLeft-= 5; 
-        console.log(secondsLeft) ;   
-    }
-        
 }, true);
     
  }
@@ -133,9 +128,6 @@ function generateQuestion1() {
         if (event.target.id == questions[1].answer) {
             console.log("true")
             generateQuestion3();
-        }
-        else if (event.target.id != questions[1].answer){
-            secondsLeft-= 5;        
         }
             
     }, true);
@@ -159,9 +151,6 @@ function generateQuestion1() {
             console.log("true")
             generateQuestion4();
         }
-        else if (event.target.id != questions[2].answer){
-            secondsLeft-= 5;         
-        }
             
     }, true);
    }
@@ -181,10 +170,7 @@ function generateQuestion1() {
         } 
         if (event.target.id == questions[4].answer) {
             endGame();
-        }
-        else if (event.target.id != questions[4].answer){
-            secondsLeft-= 5;        
-        }
-            
+        }     
+         
     }, true);
 }
