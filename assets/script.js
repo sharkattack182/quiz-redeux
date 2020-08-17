@@ -26,11 +26,7 @@ function endGame() {
     clearInterval(timer);
 }
 
-//check answer function
 
-//function checkAnswer() {
-   // if
-//}
 
 function runGame() {
     //start a timer
@@ -53,7 +49,7 @@ function runTimer() {
     var timer = setInterval(function () {
         secondsLeft--;
         timerEl.textContent = secondsLeft;
-        if (secondsLeft == 0) {
+        if (secondsLeft <= 0) {
             clearInterval(timer);
             endGame();
         }
@@ -130,6 +126,8 @@ function generateQuestion1() {
         if (event.target.id == questions[1].answer) {
             console.log("true")
             generateQuestion3();
+        } else if (event.target.id != questions[qu].answer) {
+            secondsLeft -=5;
         }
             
     }, true);
@@ -152,6 +150,8 @@ function generateQuestion1() {
         if (event.target.id == questions[2].answer) {
             console.log("true")
             generateQuestion4();
+        } else if (event.target.id != questions[qu].answer) {
+            secondsLeft -=5;
         }
             
     }, true);
@@ -172,7 +172,9 @@ function generateQuestion1() {
         } 
         if (event.target.id == questions[3].answer) {
             endGame();
-        }     
+        }  else if (event.target.id != questions[qu].answer) {
+            secondsLeft -=5;
+        }
          
     }, true);
 }
