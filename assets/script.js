@@ -21,7 +21,7 @@ function endGame() {
     localStorage.setItem("score", JSON.stringify(secondsLeft));
     localStorage.setItem("name", JSON.stringify(name));
 
-    scoreElhs.textContent(JSON.parse(localStorage.getItem(score)));
+    scoreElhs.textContent(JSON.parse(localStorage.getItem(score)) || []);
     nameElhs.textContent(localStorage.getItem(name));
     clearInterval(timer);
 }

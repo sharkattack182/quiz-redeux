@@ -12,14 +12,14 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar">
             <div id="timer">timer</div>
             <div id="highscores"><a href="assets/highscores.html">highscores</a></div>
         </nav>
     </header>
 
     <div class="container hide">    <!--need to set this to display none-->
-        <div id="question"><h3>question</h3></div>
+        <div id="question">question</div>
         <div id="options" class="btn-grid">
             <button id ="btn1" class="btn">Answer1</button>
             <button id ="btn2" class="btn">Answer2</button>
@@ -27,9 +27,14 @@
             <button id ="btn4" class="btn">Answer4</button>
         </div>
     </div>
-<div class="container" id="homepage"><!--put the start page here-->
-<div class="intro"><h3>hello lets take a test</h3></div>
-<div class="rules"><h5>these are the rules</h5></div>
+<div class="container text-center" id="homepage"><!--put the start page here-->
+<div class="intro"><h3><strong>Click below to test your Harry Potter knowledge</strong></h3></div>
+<div class="rules"><h5><ul>
+    <li>You have 45 seconds to answer all questions</li>
+    <li>If you answer a question wrong you'll lose 5 seconds</li>  
+    <li>However much time you have remaining will be your score</li> 
+    <li>Have fun!</li> 
+</ul></h5></div>
 <div class="start"><button id="startGame" onclick="runGame()">Start</button></div>
 </div> 
 

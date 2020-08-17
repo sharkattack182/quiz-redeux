@@ -1,10 +1,11 @@
 body {
     box-sizing: border-box;
-    background-color: rgb(250, 245, 177);
+    background-color: rgb(71, 70, 70);
 }
 
 nav {
-    color: blanchedalmond;
+    color: rgb(238, 176, 83);
+    background-color:rgb(32, 30, 30) ;
 }
 
 .container {
@@ -14,26 +15,30 @@ nav {
     width: 800px;
     max-width: 80%;
     border-style: solid;
+    border-color: rgb(238, 176, 83);
 }
 
+
 #question {
-    background-color: darkgoldenrod;
+    background-color: cornsilk;;
     padding: 20px;
     margin-right: 5%;
     margin-left: 5%;
+    font-size: 1.2em;
     
 }
 
 #options {
-    background-color: darkred;
+    background-color: cornsilk;
 }
 
 .btn {
     padding: 10px;
-    background-color: darkslategray;
+    background-color: rgb(238, 176, 83);
     margin: 5px;
-    border: black;
+    border: rgb(59, 59, 59);
     border-style: solid;
+    
 }
 
 .btn-grid {
